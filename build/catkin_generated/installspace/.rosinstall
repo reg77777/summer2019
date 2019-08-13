@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /root/ws/install/setup.sh

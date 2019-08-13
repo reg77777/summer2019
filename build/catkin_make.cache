@@ -1,0 +1,2 @@
+robot
+-DCATKIN_DEVEL_PREFIX=/root/ws/devel -DCMAKE_INSTALL_PREFIX=/root/ws/install -G Unix Makefiles
