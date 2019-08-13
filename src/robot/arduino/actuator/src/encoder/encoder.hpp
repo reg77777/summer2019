@@ -5,10 +5,9 @@
 
 class Encoder{
     private:
-        int pinA_,pinB_;
         volatile long long int count=0;
     public:
-        Encoder(int pinA,int pinB,void(*)());
+        Encoder(void(*)());
         void(*callback)();
 };
 

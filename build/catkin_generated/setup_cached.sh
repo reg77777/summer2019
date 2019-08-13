@@ -7,9 +7,5 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/root/ws/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/root/ws/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/root/ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/root/ws/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/root/ws/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/root/ws/src:$ROS_PACKAGE_PATH"
+export PYTHONPATH="/root/ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
