@@ -56,6 +56,18 @@ CMAKE_BINARY_DIR = /root/ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -123,18 +135,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd /root/ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/ws/build/CMakeFiles /root/ws/build/robot/CMakeFiles/progress.marks
@@ -168,6 +168,51 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+robot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : robot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: robot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make robot/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
+	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
+	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+.PHONY : robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
 robot/CMakeFiles/roscpp_generate_messages_py.dir/rule:
 	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/roscpp_generate_messages_py.dir/rule
 .PHONY : robot/CMakeFiles/roscpp_generate_messages_py.dir/rule
@@ -196,6 +241,21 @@ roscpp_generate_messages_eus: robot/CMakeFiles/roscpp_generate_messages_eus.dir/
 roscpp_generate_messages_eus/fast:
 	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/roscpp_generate_messages_eus.dir/build.make robot/CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
+
+# Convenience name for target.
+robot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
+	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+.PHONY : robot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_nodejs: robot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geometry_msgs_generate_messages_nodejs/fast:
+	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make robot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 robot/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
@@ -256,6 +316,21 @@ roscpp_generate_messages_cpp: robot/CMakeFiles/roscpp_generate_messages_cpp.dir/
 roscpp_generate_messages_cpp/fast:
 	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make robot/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
+
+# Convenience name for target.
+robot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
+	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : robot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_cpp: robot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make robot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
@@ -392,65 +467,29 @@ std_msgs_generate_messages_py/fast:
 	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/std_msgs_generate_messages_py.dir/build.make robot/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
-# Convenience name for target.
-robot/CMakeFiles/omni.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/omni.dir/rule
-.PHONY : robot/CMakeFiles/omni.dir/rule
-
-# Convenience name for target.
-omni: robot/CMakeFiles/omni.dir/rule
-
-.PHONY : omni
-
-# fast build rule for target.
-omni/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/omni.dir/build.make robot/CMakeFiles/omni.dir/build
-.PHONY : omni/fast
-
-src/omni.o: src/omni.cpp.o
-
-.PHONY : src/omni.o
-
-# target to build an object file
-src/omni.cpp.o:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/omni.dir/build.make robot/CMakeFiles/omni.dir/src/omni.cpp.o
-.PHONY : src/omni.cpp.o
-
-src/omni.i: src/omni.cpp.i
-
-.PHONY : src/omni.i
-
-# target to preprocess a source file
-src/omni.cpp.i:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/omni.dir/build.make robot/CMakeFiles/omni.dir/src/omni.cpp.i
-.PHONY : src/omni.cpp.i
-
-src/omni.s: src/omni.cpp.s
-
-.PHONY : src/omni.s
-
-# target to generate assembly for a file
-src/omni.cpp.s:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/omni.dir/build.make robot/CMakeFiles/omni.dir/src/omni.cpp.s
-.PHONY : src/omni.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... rebuild_cache"
+	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... test"
+	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... list_install_components"
+	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... edit_cache"
+	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_cpp"
+	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... install"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
@@ -461,11 +500,6 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
-	@echo "... install/strip"
-	@echo "... omni"
-	@echo "... src/omni.o"
-	@echo "... src/omni.i"
-	@echo "... src/omni.s"
 .PHONY : help
 
 

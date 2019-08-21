@@ -1,5 +1,7 @@
 #include <ros/ros.h>
 #include <std_msgs/Int16.h>
+#include <geometry_msgs/Twist.h>
+#include <math.h>
 
 class Omni{
     public:
@@ -15,7 +17,11 @@ class Omni{
             nh.advertise<std_msgs::Int16>("omni/motor1",1),
             nh.advertise<std_msgs::Int16>("omni/motor2",1)
         };
+
         void motor_run(int num,int speed);
+
+        ros::Subscriber omni_sub=nh.subscribe<geometry_msgs::Twist>("omni",10,&Omni::omni_callback,this);
+        void omni_callback(const geometry_msgs::ConstPtr& msg);
 
     private:
         ros::NodeHandle nh;
@@ -23,10 +29,9 @@ class Omni{
         void down(int speed);
         void left(int speed);
         void right(int speed);
-        void move(int rad,int distance,int speed);
-        void roatate(int angle,int speed);
+        void move(int rad,int speed);
+        void roatate(int speed);
 };
-
 
 Omni::Omni(){
 }
@@ -37,7 +42,7 @@ void Omni::motor_run(int num,int speed){
     motor_pub[num].publish(msg);
 }
 
-void Omni::up(int speed){
+void Omni::upsub(int speed){
     motor_run(1,-speed);
     motor_run(2,speed);
 }
@@ -57,6 +62,9 @@ void Omni::right(int speed){
     motor_run(0,-speed);
     motor_run(1,speed);
     motor_run(2,speed);
+}
+
+void Omni::omni_callback(const geometry_msgs::ConstPtr& msg){
 }
 
 int main(int argc,char**argv){

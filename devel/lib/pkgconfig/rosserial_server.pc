@@ -1,0 +1,8 @@
+prefix=/root/ws/devel
+
+Name: rosserial_server
+Description: Description of rosserial_server
+Version: 0.8.0
+Cflags: -I/root/ws/src/rosserial/rosserial_server/include
+Libs: -L/root/ws/devel/lib 
+Requires: roscpp rosserial_msgs std_msgs topic_tools

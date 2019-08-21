@@ -3,12 +3,15 @@
 
 #include "Arduino.h"
 
-class Encoder{
-    private:
-        volatile long long int count=0;
+class Encoders{
     public:
-        Encoder(void(*)());
-        void(*callback)();
+        static int b[3];
+        static int intpins[3];
+        static volatile long long int counts[3];
+        static void setup();
+        static void callback0();
+        static void callback1();
+        static void callback2();
 };
 
 #endif

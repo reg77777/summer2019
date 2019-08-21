@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  geometry_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -205,5 +206,5 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(omni src/omni.cpp)
-target_link_libraries(omni ${catkin_LIBRARIES})
+#add_executable(omni src/omni.cpp)
+#target_link_libraries(omni ${catkin_LIBRARIES})

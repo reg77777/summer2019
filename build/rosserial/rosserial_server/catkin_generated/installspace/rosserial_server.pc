@@ -1,0 +1,8 @@
+prefix=/root/ws/install
+
+Name: rosserial_server
+Description: Description of rosserial_server
+Version: 0.8.0
+Cflags: -I/root/ws/install/include
+Libs: -L/root/ws/install/lib 
+Requires: roscpp rosserial_msgs std_msgs topic_tools
