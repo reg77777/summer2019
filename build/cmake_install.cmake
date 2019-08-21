@@ -132,6 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/root/summer2019/build/gtest/cmake_install.cmake")
   include("/root/summer2019/build/robot/cmake_install.cmake")
+  include("/root/summer2019/build/auto/cmake_install.cmake")
 
 endif()
 

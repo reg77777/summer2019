@@ -106,8 +106,8 @@ void Omni::stop(){
 void Omni::omni_callback(const geometry_msgs::Twist::ConstPtr& mg){
     geometry_msgs::Vector3 linear=mg->linear;
     //geometry_msgs::Vector3 angular=mg->angular;
-    float x=linear->x.data;
-    float y=linear->y.data;
+    float x=linear.x;
+    float y=linear.y;
     float spd=(x+y)/2;
     if(x>0&&y>0)frontright(spd);
     else if(x==0&&y>0)front(spd);
