@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/omni.dir/src/omni.cpp.o"
-  "/root/ws/devel/lib/robot/omni.pdb"
-  "/root/ws/devel/lib/robot/omni"
+  "/root/summer2019/devel/lib/robot/omni.pdb"
+  "/root/summer2019/devel/lib/robot/omni"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -48,25 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ws/src
+CMAKE_SOURCE_DIR = /root/summer2019/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ws/build
+CMAKE_BINARY_DIR = /root/summer2019/build
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -90,6 +78,18 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target test
 test:
@@ -137,14 +137,14 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/ws/build/CMakeFiles /root/ws/build/robot/CMakeFiles/progress.marks
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/ws/build/CMakeFiles 0
+	cd /root/summer2019/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/summer2019/build/CMakeFiles /root/summer2019/build/robot/CMakeFiles/progress.marks
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/summer2019/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/clean
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +154,37 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/preinstall
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/preinstall
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/summer2019/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
+robot/CMakeFiles/omni.dir/rule:
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/omni.dir/rule
+.PHONY : robot/CMakeFiles/omni.dir/rule
+
+# Convenience name for target.
+omni: robot/CMakeFiles/omni.dir/rule
+
+.PHONY : omni
+
+# fast build rule for target.
+omni/fast:
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/omni.dir/build.make robot/CMakeFiles/omni.dir/build
+.PHONY : omni/fast
+
+# Convenience name for target.
 robot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 .PHONY : robot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -179,12 +194,12 @@ geometry_msgs_generate_messages_py: robot/CMakeFiles/geometry_msgs_generate_mess
 
 # fast build rule for target.
 geometry_msgs_generate_messages_py/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make robot/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make robot/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 .PHONY : geometry_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
 .PHONY : robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -194,12 +209,12 @@ geometry_msgs_generate_messages_lisp: robot/CMakeFiles/geometry_msgs_generate_me
 
 # fast build rule for target.
 geometry_msgs_generate_messages_lisp/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
 .PHONY : geometry_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
 .PHONY : robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -209,12 +224,12 @@ geometry_msgs_generate_messages_eus: robot/CMakeFiles/geometry_msgs_generate_mes
 
 # fast build rule for target.
 geometry_msgs_generate_messages_eus/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
 .PHONY : geometry_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 robot/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/roscpp_generate_messages_py.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/roscpp_generate_messages_py.dir/rule
 .PHONY : robot/CMakeFiles/roscpp_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -224,12 +239,12 @@ roscpp_generate_messages_py: robot/CMakeFiles/roscpp_generate_messages_py.dir/ru
 
 # fast build rule for target.
 roscpp_generate_messages_py/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/roscpp_generate_messages_py.dir/build.make robot/CMakeFiles/roscpp_generate_messages_py.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/roscpp_generate_messages_py.dir/build.make robot/CMakeFiles/roscpp_generate_messages_py.dir/build
 .PHONY : roscpp_generate_messages_py/fast
 
 # Convenience name for target.
 robot/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 .PHONY : robot/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -239,12 +254,12 @@ roscpp_generate_messages_eus: robot/CMakeFiles/roscpp_generate_messages_eus.dir/
 
 # fast build rule for target.
 roscpp_generate_messages_eus/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/roscpp_generate_messages_eus.dir/build.make robot/CMakeFiles/roscpp_generate_messages_eus.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/roscpp_generate_messages_eus.dir/build.make robot/CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
 
 # Convenience name for target.
 robot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
 .PHONY : robot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -254,12 +269,12 @@ geometry_msgs_generate_messages_nodejs: robot/CMakeFiles/geometry_msgs_generate_
 
 # fast build rule for target.
 geometry_msgs_generate_messages_nodejs/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make robot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make robot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
 .PHONY : geometry_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 robot/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 .PHONY : robot/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -269,12 +284,12 @@ roscpp_generate_messages_lisp: robot/CMakeFiles/roscpp_generate_messages_lisp.di
 
 # fast build rule for target.
 roscpp_generate_messages_lisp/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make robot/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make robot/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 .PHONY : roscpp_generate_messages_lisp/fast
 
 # Convenience name for target.
 robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 .PHONY : robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -284,12 +299,12 @@ rosgraph_msgs_generate_messages_cpp: robot/CMakeFiles/rosgraph_msgs_generate_mes
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_cpp/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make robot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 .PHONY : robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -299,12 +314,12 @@ std_msgs_generate_messages_lisp: robot/CMakeFiles/std_msgs_generate_messages_lis
 
 # fast build rule for target.
 std_msgs_generate_messages_lisp/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make robot/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 robot/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 .PHONY : robot/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -314,12 +329,12 @@ roscpp_generate_messages_cpp: robot/CMakeFiles/roscpp_generate_messages_cpp.dir/
 
 # fast build rule for target.
 roscpp_generate_messages_cpp/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make robot/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make robot/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
 
 # Convenience name for target.
 robot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
 .PHONY : robot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -329,12 +344,12 @@ geometry_msgs_generate_messages_cpp: robot/CMakeFiles/geometry_msgs_generate_mes
 
 # fast build rule for target.
 geometry_msgs_generate_messages_cpp/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make robot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make robot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
 .PHONY : geometry_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 .PHONY : robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -344,12 +359,12 @@ rosgraph_msgs_generate_messages_eus: robot/CMakeFiles/rosgraph_msgs_generate_mes
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_eus/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 .PHONY : robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -359,12 +374,12 @@ rosgraph_msgs_generate_messages_lisp: robot/CMakeFiles/rosgraph_msgs_generate_me
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_lisp/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 .PHONY : robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -374,12 +389,12 @@ std_msgs_generate_messages_cpp: robot/CMakeFiles/std_msgs_generate_messages_cpp.
 
 # fast build rule for target.
 std_msgs_generate_messages_cpp/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make robot/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 .PHONY : robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -389,12 +404,12 @@ rosgraph_msgs_generate_messages_nodejs: robot/CMakeFiles/rosgraph_msgs_generate_
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 .PHONY : robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -404,12 +419,12 @@ rosgraph_msgs_generate_messages_py: robot/CMakeFiles/rosgraph_msgs_generate_mess
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_py/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make robot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 robot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 .PHONY : robot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -419,12 +434,12 @@ std_msgs_generate_messages_eus: robot/CMakeFiles/std_msgs_generate_messages_eus.
 
 # fast build rule for target.
 std_msgs_generate_messages_eus/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make robot/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make robot/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 .PHONY : std_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 robot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 .PHONY : robot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -434,12 +449,12 @@ std_msgs_generate_messages_nodejs: robot/CMakeFiles/std_msgs_generate_messages_n
 
 # fast build rule for target.
 std_msgs_generate_messages_nodejs/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make robot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make robot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 .PHONY : robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -449,12 +464,12 @@ roscpp_generate_messages_nodejs: robot/CMakeFiles/roscpp_generate_messages_nodej
 
 # fast build rule for target.
 roscpp_generate_messages_nodejs/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make robot/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 .PHONY : roscpp_generate_messages_nodejs/fast
 
 # Convenience name for target.
 robot/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /root/ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 .PHONY : robot/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -464,8 +479,35 @@ std_msgs_generate_messages_py: robot/CMakeFiles/std_msgs_generate_messages_py.di
 
 # fast build rule for target.
 std_msgs_generate_messages_py/fast:
-	cd /root/ws/build && $(MAKE) -f robot/CMakeFiles/std_msgs_generate_messages_py.dir/build.make robot/CMakeFiles/std_msgs_generate_messages_py.dir/build
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/std_msgs_generate_messages_py.dir/build.make robot/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
+
+src/omni.o: src/omni.cpp.o
+
+.PHONY : src/omni.o
+
+# target to build an object file
+src/omni.cpp.o:
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/omni.dir/build.make robot/CMakeFiles/omni.dir/src/omni.cpp.o
+.PHONY : src/omni.cpp.o
+
+src/omni.i: src/omni.cpp.i
+
+.PHONY : src/omni.i
+
+# target to preprocess a source file
+src/omni.cpp.i:
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/omni.dir/build.make robot/CMakeFiles/omni.dir/src/omni.cpp.i
+.PHONY : src/omni.cpp.i
+
+src/omni.s: src/omni.cpp.s
+
+.PHONY : src/omni.s
+
+# target to generate assembly for a file
+src/omni.cpp.s:
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/omni.dir/build.make robot/CMakeFiles/omni.dir/src/omni.cpp.s
+.PHONY : src/omni.cpp.s
 
 # Help Target
 help:
@@ -473,9 +515,10 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... rebuild_cache"
+	@echo "... install/strip"
+	@echo "... omni"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... test"
 	@echo "... geometry_msgs_generate_messages_lisp"
@@ -500,6 +543,9 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... src/omni.o"
+	@echo "... src/omni.i"
+	@echo "... src/omni.s"
 .PHONY : help
 
 
@@ -511,6 +557,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/summer2019/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

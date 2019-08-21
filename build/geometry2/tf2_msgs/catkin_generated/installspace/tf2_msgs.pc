@@ -1,8 +1,0 @@
-prefix=/root/ws/install
-
-Name: tf2_msgs
-Description: Description of tf2_msgs
-Version: 0.6.5
-Cflags: -I/root/ws/install/include
-Libs: -L/root/ws/install/lib 
-Requires: message_generation geometry_msgs actionlib_msgs

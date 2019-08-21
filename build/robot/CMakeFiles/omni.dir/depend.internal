@@ -60,7 +60,8 @@ robot/CMakeFiles/omni.dir/src/omni.cpp.o
  /opt/ros/melodic/include/ros/wall_timer.h
  /opt/ros/melodic/include/ros/wall_timer_options.h
  /opt/ros/melodic/include/rosconsole/macros_generated.h
- /opt/ros/melodic/include/std_msgs/Int16.h
+ /opt/ros/melodic/include/std_msgs/Float32.h
+ /opt/ros/melodic/include/std_msgs/Int32.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
- /root/ws/src/robot/src/omni.cpp
+ /root/summer2019/src/robot/src/omni.cpp

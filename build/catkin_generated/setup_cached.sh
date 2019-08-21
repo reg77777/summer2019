@@ -7,4 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/root/ws/build"
+export PWD="/root/summer2019/build"

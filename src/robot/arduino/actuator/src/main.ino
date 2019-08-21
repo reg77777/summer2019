@@ -1,6 +1,8 @@
 #include "motor/motor.hpp"
 #include "encoder/encoder.hpp"
 #include <ros.h>
+#include <std_msgs/Float32.h>
+#include <std_msgs/Int32.h>
 
 Encoders encs;
 Motor mt0(2,3);

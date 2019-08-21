@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/root/ws/src/robot/src/omni.cpp" "/root/ws/build/robot/CMakeFiles/omni.dir/src/omni.cpp.o"
+  "/root/summer2019/src/robot/src/omni.cpp" "/root/summer2019/build/robot/CMakeFiles/omni.dir/src/omni.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

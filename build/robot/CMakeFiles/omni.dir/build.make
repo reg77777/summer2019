@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ws/src
+CMAKE_SOURCE_DIR = /root/summer2019/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ws/build
+CMAKE_BINARY_DIR = /root/summer2019/build
 
 # Include any dependencies generated for this target.
 include robot/CMakeFiles/omni.dir/depend.make
@@ -58,17 +58,17 @@ include robot/CMakeFiles/omni.dir/progress.make
 include robot/CMakeFiles/omni.dir/flags.make
 
 robot/CMakeFiles/omni.dir/src/omni.cpp.o: robot/CMakeFiles/omni.dir/flags.make
-robot/CMakeFiles/omni.dir/src/omni.cpp.o: /root/ws/src/robot/src/omni.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object robot/CMakeFiles/omni.dir/src/omni.cpp.o"
-	cd /root/ws/build/robot && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/omni.dir/src/omni.cpp.o -c /root/ws/src/robot/src/omni.cpp
+robot/CMakeFiles/omni.dir/src/omni.cpp.o: /root/summer2019/src/robot/src/omni.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/summer2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object robot/CMakeFiles/omni.dir/src/omni.cpp.o"
+	cd /root/summer2019/build/robot && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/omni.dir/src/omni.cpp.o -c /root/summer2019/src/robot/src/omni.cpp
 
 robot/CMakeFiles/omni.dir/src/omni.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/omni.dir/src/omni.cpp.i"
-	cd /root/ws/build/robot && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/ws/src/robot/src/omni.cpp > CMakeFiles/omni.dir/src/omni.cpp.i
+	cd /root/summer2019/build/robot && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/summer2019/src/robot/src/omni.cpp > CMakeFiles/omni.dir/src/omni.cpp.i
 
 robot/CMakeFiles/omni.dir/src/omni.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/omni.dir/src/omni.cpp.s"
-	cd /root/ws/build/robot && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/ws/src/robot/src/omni.cpp -o CMakeFiles/omni.dir/src/omni.cpp.s
+	cd /root/summer2019/build/robot && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/summer2019/src/robot/src/omni.cpp -o CMakeFiles/omni.dir/src/omni.cpp.s
 
 robot/CMakeFiles/omni.dir/src/omni.cpp.o.requires:
 
@@ -88,33 +88,33 @@ omni_OBJECTS = \
 # External object files for target omni
 omni_EXTERNAL_OBJECTS =
 
-/root/ws/devel/lib/robot/omni: robot/CMakeFiles/omni.dir/src/omni.cpp.o
-/root/ws/devel/lib/robot/omni: robot/CMakeFiles/omni.dir/build.make
-/root/ws/devel/lib/robot/omni: /opt/ros/melodic/lib/libroscpp.so
-/root/ws/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/root/ws/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/root/ws/devel/lib/robot/omni: /opt/ros/melodic/lib/librosconsole.so
-/root/ws/devel/lib/robot/omni: /opt/ros/melodic/lib/librosconsole_log4cxx.so
-/root/ws/devel/lib/robot/omni: /opt/ros/melodic/lib/librosconsole_backend_interface.so
-/root/ws/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/root/ws/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/root/ws/devel/lib/robot/omni: /opt/ros/melodic/lib/libxmlrpcpp.so
-/root/ws/devel/lib/robot/omni: /opt/ros/melodic/lib/libroscpp_serialization.so
-/root/ws/devel/lib/robot/omni: /opt/ros/melodic/lib/librostime.so
-/root/ws/devel/lib/robot/omni: /opt/ros/melodic/lib/libcpp_common.so
-/root/ws/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/root/ws/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/root/ws/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/root/ws/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/root/ws/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/root/ws/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libpthread.so
-/root/ws/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/root/ws/devel/lib/robot/omni: robot/CMakeFiles/omni.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /root/ws/devel/lib/robot/omni"
-	cd /root/ws/build/robot && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/omni.dir/link.txt --verbose=$(VERBOSE)
+/root/summer2019/devel/lib/robot/omni: robot/CMakeFiles/omni.dir/src/omni.cpp.o
+/root/summer2019/devel/lib/robot/omni: robot/CMakeFiles/omni.dir/build.make
+/root/summer2019/devel/lib/robot/omni: /opt/ros/melodic/lib/libroscpp.so
+/root/summer2019/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/root/summer2019/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/root/summer2019/devel/lib/robot/omni: /opt/ros/melodic/lib/librosconsole.so
+/root/summer2019/devel/lib/robot/omni: /opt/ros/melodic/lib/librosconsole_log4cxx.so
+/root/summer2019/devel/lib/robot/omni: /opt/ros/melodic/lib/librosconsole_backend_interface.so
+/root/summer2019/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/root/summer2019/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/root/summer2019/devel/lib/robot/omni: /opt/ros/melodic/lib/libxmlrpcpp.so
+/root/summer2019/devel/lib/robot/omni: /opt/ros/melodic/lib/libroscpp_serialization.so
+/root/summer2019/devel/lib/robot/omni: /opt/ros/melodic/lib/librostime.so
+/root/summer2019/devel/lib/robot/omni: /opt/ros/melodic/lib/libcpp_common.so
+/root/summer2019/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/root/summer2019/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/root/summer2019/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/root/summer2019/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/root/summer2019/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/root/summer2019/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libpthread.so
+/root/summer2019/devel/lib/robot/omni: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/root/summer2019/devel/lib/robot/omni: robot/CMakeFiles/omni.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/summer2019/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /root/summer2019/devel/lib/robot/omni"
+	cd /root/summer2019/build/robot && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/omni.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-robot/CMakeFiles/omni.dir/build: /root/ws/devel/lib/robot/omni
+robot/CMakeFiles/omni.dir/build: /root/summer2019/devel/lib/robot/omni
 
 .PHONY : robot/CMakeFiles/omni.dir/build
 
@@ -123,10 +123,10 @@ robot/CMakeFiles/omni.dir/requires: robot/CMakeFiles/omni.dir/src/omni.cpp.o.req
 .PHONY : robot/CMakeFiles/omni.dir/requires
 
 robot/CMakeFiles/omni.dir/clean:
-	cd /root/ws/build/robot && $(CMAKE_COMMAND) -P CMakeFiles/omni.dir/cmake_clean.cmake
+	cd /root/summer2019/build/robot && $(CMAKE_COMMAND) -P CMakeFiles/omni.dir/cmake_clean.cmake
 .PHONY : robot/CMakeFiles/omni.dir/clean
 
 robot/CMakeFiles/omni.dir/depend:
-	cd /root/ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ws/src /root/ws/src/robot /root/ws/build /root/ws/build/robot /root/ws/build/robot/CMakeFiles/omni.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/summer2019/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/summer2019/src /root/summer2019/src/robot /root/summer2019/build /root/summer2019/build/robot /root/summer2019/build/robot/CMakeFiles/omni.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : robot/CMakeFiles/omni.dir/depend
 

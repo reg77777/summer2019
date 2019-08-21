@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/ws/src
+CMAKE_SOURCE_DIR = /root/summer2019/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/ws/build
+CMAKE_BINARY_DIR = /root/summer2019/build
 
 # Utility rule file for std_msgs_generate_messages_py.
 
@@ -63,10 +63,10 @@ robot/CMakeFiles/std_msgs_generate_messages_py.dir/build: std_msgs_generate_mess
 .PHONY : robot/CMakeFiles/std_msgs_generate_messages_py.dir/build
 
 robot/CMakeFiles/std_msgs_generate_messages_py.dir/clean:
-	cd /root/ws/build/robot && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_py.dir/cmake_clean.cmake
+	cd /root/summer2019/build/robot && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : robot/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 
 robot/CMakeFiles/std_msgs_generate_messages_py.dir/depend:
-	cd /root/ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/ws/src /root/ws/src/robot /root/ws/build /root/ws/build/robot /root/ws/build/robot/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/summer2019/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/summer2019/src /root/summer2019/src/robot /root/summer2019/build /root/summer2019/build/robot /root/summer2019/build/robot/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : robot/CMakeFiles/std_msgs_generate_messages_py.dir/depend
 

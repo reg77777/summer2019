@@ -1,8 +1,8 @@
-# Install script for directory: /root/ws/src
+# Install script for directory: /root/summer2019/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/root/ws/install")
+  set(CMAKE_INSTALL_PREFIX "/root/summer2019/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -49,103 +49,89 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/root/ws/install/_setup_util.py")
+   "/root/summer2019/install/_setup_util.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/root/ws/install" TYPE PROGRAM FILES "/root/ws/build/catkin_generated/installspace/_setup_util.py")
+file(INSTALL DESTINATION "/root/summer2019/install" TYPE PROGRAM FILES "/root/summer2019/build/catkin_generated/installspace/_setup_util.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/root/ws/install/env.sh")
+   "/root/summer2019/install/env.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/root/ws/install" TYPE PROGRAM FILES "/root/ws/build/catkin_generated/installspace/env.sh")
+file(INSTALL DESTINATION "/root/summer2019/install" TYPE PROGRAM FILES "/root/summer2019/build/catkin_generated/installspace/env.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/root/ws/install/setup.bash;/root/ws/install/local_setup.bash")
+   "/root/summer2019/install/setup.bash;/root/summer2019/install/local_setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/root/ws/install" TYPE FILE FILES
-    "/root/ws/build/catkin_generated/installspace/setup.bash"
-    "/root/ws/build/catkin_generated/installspace/local_setup.bash"
+file(INSTALL DESTINATION "/root/summer2019/install" TYPE FILE FILES
+    "/root/summer2019/build/catkin_generated/installspace/setup.bash"
+    "/root/summer2019/build/catkin_generated/installspace/local_setup.bash"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/root/ws/install/setup.sh;/root/ws/install/local_setup.sh")
+   "/root/summer2019/install/setup.sh;/root/summer2019/install/local_setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/root/ws/install" TYPE FILE FILES
-    "/root/ws/build/catkin_generated/installspace/setup.sh"
-    "/root/ws/build/catkin_generated/installspace/local_setup.sh"
+file(INSTALL DESTINATION "/root/summer2019/install" TYPE FILE FILES
+    "/root/summer2019/build/catkin_generated/installspace/setup.sh"
+    "/root/summer2019/build/catkin_generated/installspace/local_setup.sh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/root/ws/install/setup.zsh;/root/ws/install/local_setup.zsh")
+   "/root/summer2019/install/setup.zsh;/root/summer2019/install/local_setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/root/ws/install" TYPE FILE FILES
-    "/root/ws/build/catkin_generated/installspace/setup.zsh"
-    "/root/ws/build/catkin_generated/installspace/local_setup.zsh"
+file(INSTALL DESTINATION "/root/summer2019/install" TYPE FILE FILES
+    "/root/summer2019/build/catkin_generated/installspace/setup.zsh"
+    "/root/summer2019/build/catkin_generated/installspace/local_setup.zsh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/root/ws/install/.rosinstall")
+   "/root/summer2019/install/.rosinstall")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/root/ws/install" TYPE FILE FILES "/root/ws/build/catkin_generated/installspace/.rosinstall")
+file(INSTALL DESTINATION "/root/summer2019/install" TYPE FILE FILES "/root/summer2019/build/catkin_generated/installspace/.rosinstall")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/root/ws/build/gtest/cmake_install.cmake")
-  include("/root/ws/build/rosserial/rosserial/cmake_install.cmake")
-  include("/root/ws/build/rosserial/rosserial_arduino/cmake_install.cmake")
-  include("/root/ws/build/rosserial/rosserial_mbed/cmake_install.cmake")
-  include("/root/ws/build/rosserial/rosserial_msgs/cmake_install.cmake")
-  include("/root/ws/build/rosserial/rosserial_python/cmake_install.cmake")
-  include("/root/ws/build/rosserial/rosserial_tivac/cmake_install.cmake")
-  include("/root/ws/build/rosserial/rosserial_vex_cortex/cmake_install.cmake")
-  include("/root/ws/build/rosserial/rosserial_vex_v5/cmake_install.cmake")
-  include("/root/ws/build/rosserial/rosserial_xbee/cmake_install.cmake")
-  include("/root/ws/build/rosserial/rosserial_client/cmake_install.cmake")
-  include("/root/ws/build/robot/cmake_install.cmake")
-  include("/root/ws/build/rosserial/rosserial_server/cmake_install.cmake")
-  include("/root/ws/build/rosserial/rosserial_embeddedlinux/cmake_install.cmake")
-  include("/root/ws/build/rosserial/rosserial_test/cmake_install.cmake")
-  include("/root/ws/build/rosserial/rosserial_windows/cmake_install.cmake")
+  include("/root/summer2019/build/gtest/cmake_install.cmake")
+  include("/root/summer2019/build/robot/cmake_install.cmake")
 
 endif()
 
@@ -157,5 +143,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/root/ws/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/root/summer2019/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
