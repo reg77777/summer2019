@@ -4,73 +4,125 @@
 #include <std_msgs/Float32.h>
 #include <std_msgs/Int32.h>
 
+//   0     up
+//          
+// 1   2  down
+//
+// CW +  CCW -
+        
 class Omni{
-    public:
-        Omni();
+    private:
+        ros::NodeHandle nh;
 
-        //   0     up
-        //          
-        // 1   2  down
-        //
-        // CW +  CCW -
-        ros::Publisher motor_pub[3]={
+        ros::Publisher mtPb[3]={
             nh.advertise<std_msgs::Float32>("mt0",1),
             nh.advertise<std_msgs::Float32>("mt1",1),
             nh.advertise<std_msgs::Float32>("mt2",1)
         };
 
-        void motor_run(int num,int speed);
-
-        ros::Subscriber omni_sub=nh.subscribe<geometry_msgs::Twist>("omni",10,&Omni::omni_callback,this);
         void omni_callback(const geometry_msgs::Twist::ConstPtr& msg);
+        ros::Subscriber omni_sub=nh.subscribe<geometry_msgs::Twist>("omni",10,&Omni::omni_callback,this);
 
-    private:
-        ros::NodeHandle nh;
-        void up(int speed);
-        void down(int speed);
-        void left(int speed);
-        void right(int speed);
-        void move(int rad,int speed);
-        void roatate(int speed);
+
+        void mtRun(int num,float spd);
+
+        //rough directioin
+        void front(float spd);
+        void back(float spd);
+        void left(float spd);
+        void right(float sed);
+        void frontleft(float spd);
+        void frontright(float spd);
+        void backleft(float spd);
+        void backright(float spd);
+        void roatate(float spd);
+
+        void stop();
+
+        //fine direction
+        void move(float rad,float spd);
 };
 
-Omni::Omni(){
+void Omni::mtRun(int num,float spd){
+    std_msgs::Float32 mg;
+    mg.data=spd;
+    mtPb[num].publish(mg);
 }
 
-void Omni::motor_run(int num,int speed){
-    std_msgs::Int32 msg;
-    msg.data=speed;
-    motor_pub[num].publish(msg);
+void Omni::front(float spd){
+    mtRun(0,0);
+    mtRun(1,-spd);
+    mtRun(2,spd);
 }
 
-void Omni::up(int speed){
-    motor_run(1,-speed);
-    motor_run(2,speed);
+void Omni::back(float spd){
+    mtRun(0,0);
+    mtRun(1,spd);
+    mtRun(2,-spd);
 }
 
-void Omni::down(int speed){
-    motor_run(1,speed);
-    motor_run(2,-speed);
+void Omni::left(float spd){
+    mtRun(0,spd);
+    mtRun(1,-spd);
+    mtRun(2,-spd);
 }
 
-void Omni::left(int speed){
-    motor_run(0,speed);
-    motor_run(1,-speed);
-    motor_run(2,-speed);
+void Omni::right(float spd){
+    mtRun(0,-spd);
+    mtRun(1,spd);
+    mtRun(2,spd);
 }
 
-void Omni::right(int speed){
-    motor_run(0,-speed);
-    motor_run(1,speed);
-    motor_run(2,speed);
+void Omni::frontleft(float spd){
+    mtRun(0,spd);
+    mtRun(1,-spd);
+    mtRun(2,0);
 }
 
-void Omni::omni_callback(const geometry_msgs::Twist::ConstPtr& msg){
+void Omni::frontright(float spd){
+    mtRun(0,-spd);
+    mtRun(1,0);
+    mtRun(2,spd);
+}
+
+void Omni::backleft(float spd){
+    mtRun(0,spd);
+    mtRun(1,0);
+    mtRun(2,-spd);
+}
+
+void Omni::backright(float spd){
+    mtRun(0,-spd);
+    mtRun(1,spd);
+    mtRun(2,0);
+}
+
+void Omni::stop(){
+    mtRun(0,0);
+    mtRun(1,0);
+    mtRun(2,0);
+}
+
+void Omni::omni_callback(const geometry_msgs::Twist::ConstPtr& mg){
+    geometry_msgs::Vector3 linear=mg->linear;
+    //geometry_msgs::Vector3 angular=mg->angular;
+    float x=linear->x.data;
+    float y=linear->y.data;
+    float spd=(x+y)/2;
+    if(x>0&&y>0)frontright(spd);
+    else if(x==0&&y>0)front(spd);
+    else if(x<0&&y>0)frontleft(spd);
+    else if(x<0&&y==0)left(spd);
+    else if(x<0&&y<0)backleft(spd);
+    else if(x==0&&y<0)back(spd);
+    else if(x>0&&y<0)backright(spd);
+    else if(x>0&&y==0)right(spd);
+    else stop();
 }
 
 int main(int argc,char**argv){
     ros::init(argc,argv,"omni");
-    Omni omni();
+    Omni omni;
     ros::spin();
     return 0;
 }
