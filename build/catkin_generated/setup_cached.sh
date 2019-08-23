@@ -8,3 +8,4 @@
 
 # modified environment variables
 export PWD="/root/summer2019/build"
+export PYTHONPATH="/root/summer2019/devel/lib/python2.7/dist-packages:$PYTHONPATH"

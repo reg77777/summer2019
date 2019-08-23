@@ -1,5 +1,4 @@
 <launch>
     <node name="omni" pkg="robot" type="omni" output="screen"/>
-    <node name="serial" pkg="rosserial_python" type="serial_node.py"/>
-    <include  file="$(find robot)/launch/arduino.launch"/>
+    <include file="$(find robot)/launch/arduino.launch"/>
 </launch>

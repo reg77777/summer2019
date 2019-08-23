@@ -1,0 +1,8 @@
+prefix=/root/summer2019/install
+
+Name: imu_complementary_filter
+Description: Description of imu_complementary_filter
+Version: 1.0.15
+Cflags: -I/root/summer2019/install/include
+Libs: -L/root/summer2019/install/lib -lcomplementary_filter
+Requires: message_filters roscpp sensor_msgs std_msgs tf

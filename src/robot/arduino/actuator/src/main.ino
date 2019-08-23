@@ -5,9 +5,9 @@
 #include <std_msgs/Int32.h>
 #include <std_msgs/Bool.h>
 
-Motor mt0(2,3);
-Motor mt1(4,5);
-Motor mt2(6,7);
+Motor mt0(4,5);
+Motor mt1(6,7);
+Motor mt2(8,9);
 Encoders encs;
 int bt0Pin=25;
 
