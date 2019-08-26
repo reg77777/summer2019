@@ -37,6 +37,8 @@
 /root/summer2019/build/gtest/googlemock/gtest/CMakeFiles/rebuild_cache.dir
 /root/summer2019/build/robot/CMakeFiles/install/local.dir
 /root/summer2019/build/robot/CMakeFiles/rebuild_cache.dir
+/root/summer2019/build/robot/CMakeFiles/hand.dir
+/root/summer2019/build/robot/CMakeFiles/move.dir
 /root/summer2019/build/robot/CMakeFiles/install/strip.dir
 /root/summer2019/build/robot/CMakeFiles/omni.dir
 /root/summer2019/build/robot/CMakeFiles/geometry_msgs_generate_messages_py.dir
@@ -55,6 +57,7 @@
 /root/summer2019/build/robot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
 /root/summer2019/build/robot/CMakeFiles/install.dir
 /root/summer2019/build/robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir
+/root/summer2019/build/robot/CMakeFiles/arm.dir
 /root/summer2019/build/robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir
 /root/summer2019/build/robot/CMakeFiles/std_msgs_generate_messages_cpp.dir
 /root/summer2019/build/robot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir

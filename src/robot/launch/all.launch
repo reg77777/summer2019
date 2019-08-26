@@ -1,0 +1,10 @@
+<launch>
+    <arg name="armkp" default=0.1/>
+    <rosparam param="armkp" subst_value="True">$(arg armkp)</rosparam>
+    <arg name="handlag" defalut=0.01/>
+    <rosparam param="handlag" subst_value="True">$(arg handlag)</rosparam>
+
+    <node name="arm" pkg="robot" type="arm"/>
+    <node name="hand" pkg="robot" type="hand"/>
+    <include file="$(find robot)/launch/move.launch">
+</launch>

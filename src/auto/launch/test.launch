@@ -1,0 +1,4 @@
+<launch>
+    <node name="test_auto" pkg="auto" type="test.py" output="screen" />
+    <include file="$(find robot)/launch/omni.launch"/>
+</launch>

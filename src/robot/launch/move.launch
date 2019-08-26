@@ -1,0 +1,7 @@
+<launch>
+    <arg name="kp" default="0.1"/>
+    <rosparam param="kp" subst_value="True">$(arg kp)</rosparam>
+
+    <node name="move" pkg="robot" type="move"/>
+    <include file="$(find robot)/launch/omni.launch"/>
+</launch>

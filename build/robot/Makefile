@@ -168,6 +168,36 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+robot/CMakeFiles/hand.dir/rule:
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/hand.dir/rule
+.PHONY : robot/CMakeFiles/hand.dir/rule
+
+# Convenience name for target.
+hand: robot/CMakeFiles/hand.dir/rule
+
+.PHONY : hand
+
+# fast build rule for target.
+hand/fast:
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/hand.dir/build.make robot/CMakeFiles/hand.dir/build
+.PHONY : hand/fast
+
+# Convenience name for target.
+robot/CMakeFiles/move.dir/rule:
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/move.dir/rule
+.PHONY : robot/CMakeFiles/move.dir/rule
+
+# Convenience name for target.
+move: robot/CMakeFiles/move.dir/rule
+
+.PHONY : move
+
+# fast build rule for target.
+move/fast:
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/move.dir/build.make robot/CMakeFiles/move.dir/build
+.PHONY : move/fast
+
+# Convenience name for target.
 robot/CMakeFiles/omni.dir/rule:
 	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/omni.dir/rule
 .PHONY : robot/CMakeFiles/omni.dir/rule
@@ -363,6 +393,21 @@ rosgraph_msgs_generate_messages_eus/fast:
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
+robot/CMakeFiles/arm.dir/rule:
+	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/arm.dir/rule
+.PHONY : robot/CMakeFiles/arm.dir/rule
+
+# Convenience name for target.
+arm: robot/CMakeFiles/arm.dir/rule
+
+.PHONY : arm
+
+# fast build rule for target.
+arm/fast:
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/arm.dir/build.make robot/CMakeFiles/arm.dir/build
+.PHONY : arm/fast
+
+# Convenience name for target.
 robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
 	cd /root/summer2019/build && $(MAKE) -f CMakeFiles/Makefile2 robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 .PHONY : robot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
@@ -482,6 +527,87 @@ std_msgs_generate_messages_py/fast:
 	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/std_msgs_generate_messages_py.dir/build.make robot/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
+src/arm.o: src/arm.cpp.o
+
+.PHONY : src/arm.o
+
+# target to build an object file
+src/arm.cpp.o:
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/arm.dir/build.make robot/CMakeFiles/arm.dir/src/arm.cpp.o
+.PHONY : src/arm.cpp.o
+
+src/arm.i: src/arm.cpp.i
+
+.PHONY : src/arm.i
+
+# target to preprocess a source file
+src/arm.cpp.i:
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/arm.dir/build.make robot/CMakeFiles/arm.dir/src/arm.cpp.i
+.PHONY : src/arm.cpp.i
+
+src/arm.s: src/arm.cpp.s
+
+.PHONY : src/arm.s
+
+# target to generate assembly for a file
+src/arm.cpp.s:
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/arm.dir/build.make robot/CMakeFiles/arm.dir/src/arm.cpp.s
+.PHONY : src/arm.cpp.s
+
+src/hand.o: src/hand.cpp.o
+
+.PHONY : src/hand.o
+
+# target to build an object file
+src/hand.cpp.o:
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/hand.dir/build.make robot/CMakeFiles/hand.dir/src/hand.cpp.o
+.PHONY : src/hand.cpp.o
+
+src/hand.i: src/hand.cpp.i
+
+.PHONY : src/hand.i
+
+# target to preprocess a source file
+src/hand.cpp.i:
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/hand.dir/build.make robot/CMakeFiles/hand.dir/src/hand.cpp.i
+.PHONY : src/hand.cpp.i
+
+src/hand.s: src/hand.cpp.s
+
+.PHONY : src/hand.s
+
+# target to generate assembly for a file
+src/hand.cpp.s:
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/hand.dir/build.make robot/CMakeFiles/hand.dir/src/hand.cpp.s
+.PHONY : src/hand.cpp.s
+
+src/move.o: src/move.cpp.o
+
+.PHONY : src/move.o
+
+# target to build an object file
+src/move.cpp.o:
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/move.dir/build.make robot/CMakeFiles/move.dir/src/move.cpp.o
+.PHONY : src/move.cpp.o
+
+src/move.i: src/move.cpp.i
+
+.PHONY : src/move.i
+
+# target to preprocess a source file
+src/move.cpp.i:
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/move.dir/build.make robot/CMakeFiles/move.dir/src/move.cpp.i
+.PHONY : src/move.cpp.i
+
+src/move.s: src/move.cpp.s
+
+.PHONY : src/move.s
+
+# target to generate assembly for a file
+src/move.cpp.s:
+	cd /root/summer2019/build && $(MAKE) -f robot/CMakeFiles/move.dir/build.make robot/CMakeFiles/move.dir/src/move.cpp.s
+.PHONY : src/move.cpp.s
+
 src/omni.o: src/omni.cpp.o
 
 .PHONY : src/omni.o
@@ -517,6 +643,8 @@ help:
 	@echo "... depend"
 	@echo "... install/local"
 	@echo "... rebuild_cache"
+	@echo "... hand"
+	@echo "... move"
 	@echo "... install/strip"
 	@echo "... omni"
 	@echo "... geometry_msgs_generate_messages_py"
@@ -535,6 +663,7 @@ help:
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... install"
 	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... arm"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
@@ -543,6 +672,15 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... src/arm.o"
+	@echo "... src/arm.i"
+	@echo "... src/arm.s"
+	@echo "... src/hand.o"
+	@echo "... src/hand.i"
+	@echo "... src/hand.s"
+	@echo "... src/move.o"
+	@echo "... src/move.i"
+	@echo "... src/move.s"
 	@echo "... src/omni.o"
 	@echo "... src/omni.i"
 	@echo "... src/omni.s"

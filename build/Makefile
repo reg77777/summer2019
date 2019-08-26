@@ -285,6 +285,32 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
+# Target rules for targets named hand
+
+# Build rule for target.
+hand: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hand
+.PHONY : hand
+
+# fast build rule for target.
+hand/fast:
+	$(MAKE) -f robot/CMakeFiles/hand.dir/build.make robot/CMakeFiles/hand.dir/build
+.PHONY : hand/fast
+
+#=============================================================================
+# Target rules for targets named move
+
+# Build rule for target.
+move: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move
+.PHONY : move
+
+# fast build rule for target.
+move/fast:
+	$(MAKE) -f robot/CMakeFiles/move.dir/build.make robot/CMakeFiles/move.dir/build
+.PHONY : move/fast
+
+#=============================================================================
 # Target rules for targets named omni
 
 # Build rule for target.
@@ -452,6 +478,19 @@ rosgraph_msgs_generate_messages_eus: cmake_check_build_system
 rosgraph_msgs_generate_messages_eus/fast:
 	$(MAKE) -f robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make robot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named arm
+
+# Build rule for target.
+arm: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 arm
+.PHONY : arm
+
+# fast build rule for target.
+arm/fast:
+	$(MAKE) -f robot/CMakeFiles/arm.dir/build.make robot/CMakeFiles/arm.dir/build
+.PHONY : arm/fast
 
 #=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_lisp
@@ -852,6 +891,8 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... hand"
+	@echo "... move"
 	@echo "... omni"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_lisp"
@@ -865,6 +906,7 @@ help:
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... arm"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"

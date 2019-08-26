@@ -208,3 +208,12 @@ include_directories(
 
 add_executable(omni src/omni.cpp)
 target_link_libraries(omni ${catkin_LIBRARIES})
+
+add_executable(move src/move.cpp)
+target_link_libraries(move ${catkin_LIBRARIES})
+
+add_executable(arm src/arm.cpp)
+target_link_libraries(arm ${catkin_LIBRARIES})
+
+add_executable(hand src/hand.cpp)
+target_link_libraries(hand ${catkin_LIBRARIES})
