@@ -1,10 +1,17 @@
 <launch>
-    <arg name="armkp" default=0.1/>
-    <rosparam param="armkp" subst_value="True">$(arg armkp)</rosparam>
-    <arg name="handlag" defalut=0.01/>
-    <rosparam param="handlag" subst_value="True">$(arg handlag)</rosparam>
+    <arg name="handlag0" default="0.3"/>
+    <rosparam param="handlag0" subst_value="True">$(arg handlag0)</rosparam>
+
+    <arg name="handlag1" default="0.3"/>
+    <rosparam param="handlag1" subst_value="True">$(arg handlag1)</rosparam>
+
+    <arg name="armlag0" default="0.6"/>
+    <rosparam param="armlag0" subst_value="True">$(arg armlag0)</rosparam>
+
+    <arg name="armlag1" default="0.5"/>
+    <rosparam param="armlag1" subst_value="True">$(arg armlag1)</rosparam>
 
     <node name="arm" pkg="robot" type="arm"/>
     <node name="hand" pkg="robot" type="hand"/>
-    <include file="$(find robot)/launch/move.launch">
+    <include file="$(find robot)/launch/move.launch"/>
 </launch>

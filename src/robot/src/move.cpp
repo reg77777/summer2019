@@ -31,13 +31,14 @@ class Move{
         long long int e2c=0;
         float x=0,y=0,z=0;
         double kp;
-        double maxspd,minspd;
+        double maxspd;
+        double r;
 };
 
 Move::Move(){
     nh.param<double>("kp",kp,0.1);
     nh.param<double>("maxspd",maxspd,80);
-    nh.param<double>("minspd",minspd,-80);
+    nh.param<double>("r",r,0.1);
 }
 
 void Move::e0Cb(const std_msgs::Int32::ConstPtr&mg){
@@ -59,20 +60,22 @@ void Move::mvCb(const geometry_msgs::Twist::ConstPtr&mg){
 void Move::publish(){
     geometry_msgs::Twist mg;
     float nowx= -e0c +e1c*sqrt(3)/2  +e2c*sqrt(3)/2;
-    float nowy=     -e1c/2          +e2c/2;
-    float nowz= e0c +e1c            +e2c;
-    nowx/=3;nowy/=3;nowz/=3;
+    float nowy=      -e1c/2          +e2c/2;
+    float nowz= e0c  +e1c            +e2c;
+    nowx/=3;nowy/=2;nowz/=3;
     mg.linear.x=kp*(x-nowx);
     mg.linear.y=kp*(y-nowy);
-    mg.angular.z=kp*(z-nowz);
+    mg.angular.z=r*(z-nowz);
 
-    //spd limit
-    mg.linear.x=std::min(mg.linear.x,maxspd);
-    mg.linear.y=std::min(mg.linear.y,maxspd);
-    mg.angular.z=std::min(mg.angular.z,maxspd);
-    mg.linear.x=std::max(mg.linear.x,minspd);
-    mg.linear.y=std::max(mg.linear.y,minspd);
-    mg.angular.z=std::max(mg.angular.z,minspd);
+    //spd max limit
+    /*
+    if(mg.linear.x>=0)mg.linear.x=std::min(mg.linear.x,maxspd);
+    else mg.linear.x=std::max(mg.linear.x,-maxspd);
+    if(mg.linear.y>=0)mg.linear.y=std::min(mg.linear.y,maxspd);
+    else mg.linear.y=std::max(mg.linear.y,-maxspd);
+    if(mg.linear.z>=0)mg.angular.z=std::min(mg.angular.z,maxspd);
+    else mg.angular.z=std::max(mg.angular.z,-maxspd);
+    */
 
     vPb.publish(mg);
 }

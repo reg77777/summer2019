@@ -57,6 +57,7 @@ robot/CMakeFiles/hand.dir/src/hand.cpp.o: /opt/ros/melodic/include/ros/types.h
 robot/CMakeFiles/hand.dir/src/hand.cpp.o: /opt/ros/melodic/include/ros/wall_timer.h
 robot/CMakeFiles/hand.dir/src/hand.cpp.o: /opt/ros/melodic/include/ros/wall_timer_options.h
 robot/CMakeFiles/hand.dir/src/hand.cpp.o: /opt/ros/melodic/include/rosconsole/macros_generated.h
+robot/CMakeFiles/hand.dir/src/hand.cpp.o: /opt/ros/melodic/include/std_msgs/Bool.h
 robot/CMakeFiles/hand.dir/src/hand.cpp.o: /opt/ros/melodic/include/std_msgs/Float32.h
 robot/CMakeFiles/hand.dir/src/hand.cpp.o: /opt/ros/melodic/include/std_msgs/Int16.h
 robot/CMakeFiles/hand.dir/src/hand.cpp.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h

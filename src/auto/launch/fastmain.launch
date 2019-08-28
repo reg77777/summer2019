@@ -2,7 +2,7 @@
     <arg name="R0d" default="[0,350,0]"/>
     <rosparam param="R0d" subst_value="True">$(arg R0d)</rosparam>
 
-    <arg name="L0d" default="[0,30,0]"/>
+    <arg name="L0d" default="[0,200,0]"/>
     <rosparam param="L0d" subst_value="True">$(arg L0d)</rosparam>
 
     <arg name="LU0d" default="[-900,30,0]"/>
@@ -20,22 +20,20 @@
     <arg name="LU1d" default="[-2000,100,0]"/>
     <rosparam param="LU1d" subst_value="True">$(arg LU1d)</rosparam>
 
-    <arg name="U2d" default="[-3500,100,0]"/>
+    <arg name="U2d" default="[-3000,20,0]"/>
     <rosparam param="U2d" subst_value="True">$(arg U2d)</rosparam>
 
-
-    <arg name="R1d" default="[0,1100,0]"/>
+    <arg name="R1d" default="[0,0,0]"/>
     <rosparam param="R1d" subst_value="True">$(arg R1d)</rosparam>
 
-    <arg name="L1d" default="[0,700,0]"/>
+    <arg name="L1d" default="[-300,100,0]"/>
     <rosparam param="L1d" subst_value="True">$(arg L1d)</rosparam>
 
-    <arg name="ROTATEd" default="[0,700,-500]"/>
+    <arg name="ROTATEd" default="[-300,100,100]"/>
     <rosparam param="ROTATEd" subst_value="True">$(arg ROTATEd)</rosparam>
 
-    <arg name="U3d" default="[0,1400,-500]"/>
+    <arg name="U3d" default="[-400,100,0]"/>
     <rosparam param="U3d" subst_value="True">$(arg U3d)</rosparam>
-
 
     <node name="auto" pkg="auto" type="auto.py" output="screen"/>
     <include file="$(find robot)/launch/all.launch"/>

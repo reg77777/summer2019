@@ -19,12 +19,12 @@ class Encoders{
         void reset(int x);
 };
 
-int Encoders::a[4]={2,19,3,21};
-int Encoders::b[4]={39,22,47,40};
-int Encoders::gnd[4]={37,24,49,41};
-int Encoders::v[4]={35,26,51,42};
-int Encoders::intpins[4]={0,4,1,3};
-volatile long long int Encoders::counts[4]={0,0,0,0};
+int Encoders::a[3]={2,3,19};
+int Encoders::b[3]={39,47,22};
+int Encoders::gnd[3]={37,49,24};
+int Encoders::v[3]={35,51,26};
+int Encoders::intpins[3]={0,1,4};
+volatile long long int Encoders::counts[3]={0,0,0};
 
 Encoders::Encoders(){
     for(int i=0;i<3;i++){
@@ -40,7 +40,6 @@ Encoders::Encoders(){
     attachInterrupt(intpins[0],Cb0,RISING);
     attachInterrupt(intpins[1],Cb1,RISING);
     attachInterrupt(intpins[2],Cb2,RISING);
-    attachInterrupt(intpins[3],Cb3,RISING);
 }
 
 void Encoders::Cb0(){
@@ -54,10 +53,6 @@ void Encoders::Cb1(){
 void Encoders::Cb2(){
     if(digitalRead(b[2]))counts[2]--;
     else counts[2]++;
-}
-void Encoders::Cb3(){
-    if(digitalRead(b[3]))counts[3]--;
-    else counts[3]++;
 }
 
 void Encoders::reset(int x){

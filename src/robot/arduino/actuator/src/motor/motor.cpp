@@ -9,6 +9,8 @@ Motor::Motor(int pinA,int pinB){
 }
 
 void Motor::run(int speed){
+    if(speed>255)speed=255;
+    if(speed<-255)speed=-255;
     if(speed>=0){
         analogWrite(pinA_,speed);
         analogWrite(pinB_,0);

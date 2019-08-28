@@ -3,8 +3,7 @@
 #include <geometry_msgs/Twist.h>
 #include <std_msgs/Float32.h>
 #include <std_msgs/Int32.h>
-#include <cmath>
-
+#include <cmath> 
 //   0     up
 //          
 // 1   2  down
@@ -39,14 +38,14 @@ void Omni::cmdVelCb(const geometry_msgs::Twist::ConstPtr& mg){
     geometry_msgs::Vector3 linear=mg->linear;
     geometry_msgs::Vector3 angular=mg->angular;
     //geometry_msgs::Vector3 angular=mg->angular;
-    ROS_INFO("linear  :\nx:%f\ny:%f\nz:%f",linear.x,linear.y,linear.z);
+    ROS_INFO("linear  :\nx:%f\ny:%f\nz:%f",linear.x,linear.y,angular.z);
     float x=linear.x;
     float y=linear.y;
     float z=angular.z;
     float v[3];
     v[0]=-x+z;
-    v[1]=x/2-1.*sqrt(3)/2*y+z;
-    v[2]=x/2+1.*sqrt(3)/2*y+z;
+    v[1]=x/2-sqrt(3)/2*y+z;
+    v[2]=x/2+sqrt(3)/2*y+z;
     for(int i=0;i<3;i++)mtRun(i,v[i]);
 }
 

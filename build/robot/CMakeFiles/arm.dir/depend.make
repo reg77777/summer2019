@@ -57,6 +57,7 @@ robot/CMakeFiles/arm.dir/src/arm.cpp.o: /opt/ros/melodic/include/ros/types.h
 robot/CMakeFiles/arm.dir/src/arm.cpp.o: /opt/ros/melodic/include/ros/wall_timer.h
 robot/CMakeFiles/arm.dir/src/arm.cpp.o: /opt/ros/melodic/include/ros/wall_timer_options.h
 robot/CMakeFiles/arm.dir/src/arm.cpp.o: /opt/ros/melodic/include/rosconsole/macros_generated.h
+robot/CMakeFiles/arm.dir/src/arm.cpp.o: /opt/ros/melodic/include/std_msgs/Bool.h
 robot/CMakeFiles/arm.dir/src/arm.cpp.o: /opt/ros/melodic/include/std_msgs/Float32.h
 robot/CMakeFiles/arm.dir/src/arm.cpp.o: /opt/ros/melodic/include/std_msgs/Int16.h
 robot/CMakeFiles/arm.dir/src/arm.cpp.o: /opt/ros/melodic/include/std_msgs/Int32.h
