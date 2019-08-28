@@ -6,6 +6,7 @@ import smach_ros
 from geometry_msgs.msg import Twist
 from std_msgs.msg import Int16
 from std_msgs.msg import Bool
+import time
 
 class INIT0(smach.State):
     def __init__(self):
@@ -50,24 +51,33 @@ class R0(smach.State):
         self.mPb=rospy.Publisher('cmd_move',Twist,queue_size=10)
     def execute(self,userdata):
         self.mPb.publish(self.mMg)
-        rospy.sleep(2)
+        rospy.sleep(1)
         return 'next'
 
 class STOP0(smach.State):
     def __init__(self):
         smach.State.__init__(self,outcomes=['next'])
-        self.mMg=Twist()
-        self.mPb=rospy.Publisher('cmd_move',Twist,queue_size=10)
     def execute(self,userdata):
-        self.mPb.publish(self.mMg)
-        #rospy.sleep(5)
+        time.sleep(3)
         return 'next'
 
 class RELEASE(smach.State):
     def __init__(self):
         smach.State.__init__(self,outcomes=['next'])
+        self.aMg=False
+        self.aPb=rospy.Publisher('cmd_arm0',Bool,queue_size=10)
+        self.hMg=False
+        self.hPb=rospy.Publisher('cmd_hand0',Bool,queue_size=10)
     def execute(self,userdata):
-        #rospy.sleep(5)
+        self.aPb.publish(self.aMg)
+        time.sleep(2)
+
+        self.aMg=True
+        self.hPb.publish(self.aMg)
+        time.sleep(2)
+
+        self.hPb.publish(self.hMg)
+        time.sleep(2)
         return 'next'
 
 class L0(smach.State):
@@ -79,9 +89,19 @@ class L0(smach.State):
         self.mMg.linear.y=ds[1]
         self.mMg.angular.z=ds[2]
         self.mPb=rospy.Publisher('cmd_move',Twist,queue_size=10)
+        self.aMg=True
+        self.aPb=rospy.Publisher('cmd_arm0',Bool,queue_size=10)
+        self.hMg=True
+        self.hPb=rospy.Publisher('cmd_hand0',Bool,queue_size=10)
     def execute(self,userdata):
         self.mPb.publish(self.mMg)
         rospy.sleep(2)
+
+        self.hPb.publish(self.hMg)
+        time.sleep(2)
+
+        self.aPb.publish(self.aMg)
+        time.sleep(2)
         return 'next'
     
 class LU0(smach.State):
@@ -219,7 +239,7 @@ class STOP1(smach.State):
     def __init__(self):
         smach.State.__init__(self,outcomes=['next'])
     def execute(self,userdata):
-        rospy.sleep(2)
+        time.sleep(2)
         return 'next'
 
 class L1(smach.State):

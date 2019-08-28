@@ -1,14 +1,14 @@
 <launch>
-    <arg name="handlag0" default="0.3"/>
+    <arg name="handlag0" default="3.5"/>
     <rosparam param="handlag0" subst_value="True">$(arg handlag0)</rosparam>
 
-    <arg name="handlag1" default="0.3"/>
+    <arg name="handlag1" default="2"/>
     <rosparam param="handlag1" subst_value="True">$(arg handlag1)</rosparam>
 
-    <arg name="armlag0" default="0.6"/>
+    <arg name="armlag0" default="1.4"/>
     <rosparam param="armlag0" subst_value="True">$(arg armlag0)</rosparam>
 
-    <arg name="armlag1" default="0.5"/>
+    <arg name="armlag1" default="0.6"/>
     <rosparam param="armlag1" subst_value="True">$(arg armlag1)</rosparam>
 
     <node name="arm" pkg="robot" type="arm"/>

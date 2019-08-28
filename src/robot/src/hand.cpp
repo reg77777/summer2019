@@ -2,6 +2,7 @@
 #include <std_msgs/Float32.h>
 #include <std_msgs/Int16.h>
 #include <std_msgs/Bool.h>
+#include <unistd.h>
 
 class Hand{
     public:
@@ -9,7 +10,7 @@ class Hand{
     private:
         ros::NodeHandle nh;
 
-        bool state=false;
+        bool state=true;
 
         ros::Publisher mtPb=nh.advertise<std_msgs::Float32>("mtHand",1);
 
@@ -33,12 +34,11 @@ Hand::Hand(){
 }
 
 void Hand::HandCb0(const std_msgs::Bool::ConstPtr& mg){
-    ros::Rate rate(handlag0);
     if(state&&!mg->data){
         std_msgs::Float32 m;
         m.data=200;
         mtPb.publish(m);
-        rate.sleep();
+        sleep(handlag0);
         m.data=0;
         mtPb.publish(m);
     }
@@ -46,7 +46,7 @@ void Hand::HandCb0(const std_msgs::Bool::ConstPtr& mg){
         std_msgs::Float32 m;
         m.data=-200;
         mtPb.publish(m);
-        rate.sleep();
+        sleep(handlag0);
         m.data=0;
         mtPb.publish(m);
     }
@@ -54,12 +54,11 @@ void Hand::HandCb0(const std_msgs::Bool::ConstPtr& mg){
 }
 
 void Hand::HandCb1(const std_msgs::Bool::ConstPtr& mg){
-    ros::Rate rate(handlag1);
     if(state&&!mg->data){
         std_msgs::Float32 m;
         m.data=200;
         mtPb.publish(m);
-        rate.sleep();
+        sleep(handlag1);
         m.data=0;
         mtPb.publish(m);
     }
@@ -67,7 +66,7 @@ void Hand::HandCb1(const std_msgs::Bool::ConstPtr& mg){
         std_msgs::Float32 m;
         m.data=-200;
         mtPb.publish(m);
-        rate.sleep();
+        sleep(handlag1);
         m.data=0;
         mtPb.publish(m);
     }

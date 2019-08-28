@@ -3,11 +3,11 @@
 #include <std_msgs/Int16.h>
 #include <std_msgs/Int32.h>
 #include <std_msgs/Bool.h>
+#include <unistd.h>
 
 class Arm{
     public:
         Arm();
-        void publish();
     private:
         ros::NodeHandle nh;
 
@@ -25,23 +25,22 @@ class Arm{
 };
 
 Arm::Arm(){
-    nh.param<float>("armlag0",armlag0,0.5);
-    nh.param<float>("armlag1",armlag1,0.5);
+    nh.param<float>("armlag0",armlag0,1);
+    nh.param<float>("armlag1",armlag1,1);
 }
 
 void Arm::ArmCb0(const std_msgs::Bool::ConstPtr& mg){
     std_msgs::Float32 m;
     if(mg->data&&!up){
-        ros::Rate rate(armlag0);
-        m.data=-50;
+        m.data=-80;
         mtPb.publish(m);
-        rate.sleep();
+        sleep(armlag0);
     }
     else if(!mg->data&&up){
         ros::Rate rate(armlag0);
-        m.data=50;
+        m.data=80;
         mtPb.publish(m);
-        rate.sleep();
+        sleep(armlag0);
     }
     m.data=0;
     mtPb.publish(m);
@@ -51,16 +50,14 @@ void Arm::ArmCb0(const std_msgs::Bool::ConstPtr& mg){
 void Arm::ArmCb1(const std_msgs::Bool::ConstPtr& mg){
     std_msgs::Float32 m;
     if(mg->data&&!up){
-        ros::Rate rate(armlag1);
-        m.data=-50;
+        m.data=-80;
         mtPb.publish(m);
-        rate.sleep();
+        sleep(armlag1);
     }
     else if(!mg->data&&up){
-        ros::Rate rate(armlag1);
-        m.data=50;
+        m.data=80;
         mtPb.publish(m);
-        rate.sleep();
+        sleep(armlag1);
     }
     m.data=0;
     mtPb.publish(m);

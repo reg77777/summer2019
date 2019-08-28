@@ -1,14 +1,14 @@
 <launch>
-    <arg name="R0d" default="[0,350,0]"/>
+    <arg name="R0d" default="[0,250,0]"/>
     <rosparam param="R0d" subst_value="True">$(arg R0d)</rosparam>
 
-    <arg name="L0d" default="[0,30,0]"/>
+    <arg name="L0d" default="[0,50,0]"/>
     <rosparam param="L0d" subst_value="True">$(arg L0d)</rosparam>
 
-    <arg name="LU0d" default="[-900,30,0]"/>
+    <arg name="LU0d" default="[-900,50,0]"/>
     <rosparam param="LU0d" subst_value="True">$(arg LU0d)</rosparam>
 
-    <arg name="U0d" default="[-900,30,0]"/>
+    <arg name="U0d" default="[-900,100,0]"/>
     <rosparam param="U0d" subst_value="True">$(arg U0d)</rosparam>
 
     <arg name="RU0d" default="[-900,300,0]"/>
