@@ -1,11 +1,11 @@
 <launch>
-    <arg name="handlag0" default="3.5"/>
+    <arg name="handlag0" default="2.5"/>
     <rosparam param="handlag0" subst_value="True">$(arg handlag0)</rosparam>
 
-    <arg name="handlag1" default="2"/>
+    <arg name="handlag1" default="1.9"/>
     <rosparam param="handlag1" subst_value="True">$(arg handlag1)</rosparam>
 
-    <arg name="armlag0" default="1.4"/>
+    <arg name="armlag0" default="1.8"/>
     <rosparam param="armlag0" subst_value="True">$(arg armlag0)</rosparam>
 
     <arg name="armlag1" default="0.6"/>

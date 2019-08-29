@@ -1,36 +1,36 @@
 <launch>
-    <arg name="R0d" default="[0,250,0]"/>
+    <arg name="R0d" default="[0,320,0]"/>
     <rosparam param="R0d" subst_value="True">$(arg R0d)</rosparam>
 
-    <arg name="L0d" default="[0,50,0]"/>
+    <arg name="L0d" default="[0,0,0]"/>
     <rosparam param="L0d" subst_value="True">$(arg L0d)</rosparam>
 
-    <arg name="LU0d" default="[-900,50,0]"/>
+    <arg name="LU0d" default="[-400,0,0]"/>
     <rosparam param="LU0d" subst_value="True">$(arg LU0d)</rosparam>
 
-    <arg name="U0d" default="[-900,100,0]"/>
+    <arg name="U0d" default="[-900,200,0]"/>
     <rosparam param="U0d" subst_value="True">$(arg U0d)</rosparam>
 
-    <arg name="RU0d" default="[-900,300,0]"/>
+    <arg name="RU0d" default="[-1000,400,0]"/>
     <rosparam param="RU0d" subst_value="True">$(arg RU0d)</rosparam>
 
-    <arg name="U1d" default="[-2000,400,0]"/>
+    <arg name="U1d" default="[-1500,400,0]"/>
     <rosparam param="U1d" subst_value="True">$(arg U1d)</rosparam>
 
-    <arg name="LU1d" default="[-2000,100,0]"/>
+    <arg name="LU1d" default="[-2200,100,0]"/>
     <rosparam param="LU1d" subst_value="True">$(arg LU1d)</rosparam>
 
     <arg name="U2d" default="[-3500,100,0]"/>
     <rosparam param="U2d" subst_value="True">$(arg U2d)</rosparam>
 
 
-    <arg name="R1d" default="[0,1100,0]"/>
+    <arg name="R1d" default="[0,900,0]"/>
     <rosparam param="R1d" subst_value="True">$(arg R1d)</rosparam>
 
     <arg name="L1d" default="[0,700,0]"/>
     <rosparam param="L1d" subst_value="True">$(arg L1d)</rosparam>
 
-    <arg name="ROTATEd" default="[0,700,-500]"/>
+    <arg name="ROTATEd" default="[0,700,-450]"/>
     <rosparam param="ROTATEd" subst_value="True">$(arg ROTATEd)</rosparam>
 
     <arg name="U3d" default="[0,1400,-500]"/>

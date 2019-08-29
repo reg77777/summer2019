@@ -69,6 +69,7 @@ class RELEASE(smach.State):
         self.hMg=False
         self.hPb=rospy.Publisher('cmd_hand0',Bool,queue_size=10)
     def execute(self,userdata):
+        self.aMg=False
         self.aPb.publish(self.aMg)
         time.sleep(2)
 
@@ -115,7 +116,7 @@ class LU0(smach.State):
         self.mPb=rospy.Publisher('cmd_move',Twist,queue_size=10)
     def execute(self,userdata):
         self.mPb.publish(self.mMg)
-        rospy.sleep(2)
+        rospy.sleep(3)
         return 'next'
 
 class U0(smach.State):
@@ -129,7 +130,7 @@ class U0(smach.State):
         self.mPb=rospy.Publisher('cmd_move',Twist,queue_size=10)
     def execute(self,userdata):
         self.mPb.publish(self.mMg)
-        rospy.sleep(2)
+        rospy.sleep(3)
         return 'next'
 
 class RU0(smach.State):
@@ -144,7 +145,7 @@ class RU0(smach.State):
         self.mPb=rospy.Publisher('cmd_move',Twist,queue_size=10)
     def execute(self,userdata):
         self.mPb.publish(self.mMg)
-        rospy.sleep(2)
+        rospy.sleep(1.5)
         return 'next'
 
 class U1(smach.State):
@@ -158,7 +159,7 @@ class U1(smach.State):
         self.mPb=rospy.Publisher('cmd_move',Twist,queue_size=10)
     def execute(self,userdata):
         self.mPb.publish(self.mMg)
-        rospy.sleep(2)
+        rospy.sleep(1.5)
         return 'next'
 
 class LU1(smach.State):
@@ -172,7 +173,7 @@ class LU1(smach.State):
         self.mPb=rospy.Publisher('cmd_move',Twist,queue_size=10)
     def execute(self,userdata):
         self.mPb.publish(self.mMg)
-        rospy.sleep(2)
+        rospy.sleep(1.5)
         return 'next'
 
 class U2(smach.State):
@@ -186,7 +187,7 @@ class U2(smach.State):
         self.mPb=rospy.Publisher('cmd_move',Twist,queue_size=10)
     def execute(self,userdata):
         self.mPb.publish(self.mMg)
-        rospy.sleep(2)
+        rospy.sleep(1.5)
         return 'next'
 
 class INIT1(smach.State):

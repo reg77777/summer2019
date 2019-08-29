@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hand.dir/src/hand.cpp.o"
-  "/root/summer2019/devel/lib/robot/hand.pdb"
-  "/root/summer2019/devel/lib/robot/hand"
+  "/home/junpei/summer2019/devel/lib/robot/hand.pdb"
+  "/home/junpei/summer2019/devel/lib/robot/hand"
 )
 
 # Per-language clean rules from dependency scanning.

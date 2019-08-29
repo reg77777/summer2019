@@ -1,8 +1,8 @@
-prefix=/root/summer2019/install
+prefix=/home/junpei/summer2019/install
 
 Name: auto
 Description: Description of auto
 Version: 0.0.0
 Cflags: 
-Libs: -L/root/summer2019/install/lib 
+Libs: -L/home/junpei/summer2019/install/lib 
 Requires: 

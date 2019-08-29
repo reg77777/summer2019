@@ -68,14 +68,12 @@ void Move::publish(){
     mg.angular.z=r*(z-nowz);
 
     //spd max limit
-    /*
     if(mg.linear.x>=0)mg.linear.x=std::min(mg.linear.x,maxspd);
     else mg.linear.x=std::max(mg.linear.x,-maxspd);
     if(mg.linear.y>=0)mg.linear.y=std::min(mg.linear.y,maxspd);
     else mg.linear.y=std::max(mg.linear.y,-maxspd);
     if(mg.linear.z>=0)mg.angular.z=std::min(mg.angular.z,maxspd);
     else mg.angular.z=std::max(mg.angular.z,-maxspd);
-    */
 
     vPb.publish(mg);
 }

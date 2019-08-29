@@ -1,2 +1,2 @@
 auto:robot
--DCATKIN_DEVEL_PREFIX=/root/summer2019/devel -DCMAKE_INSTALL_PREFIX=/root/summer2019/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/junpei/summer2019/devel -DCMAKE_INSTALL_PREFIX=/home/junpei/summer2019/install -G Unix Makefiles

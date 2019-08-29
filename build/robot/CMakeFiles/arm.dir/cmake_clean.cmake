@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/arm.dir/src/arm.cpp.o"
-  "/root/summer2019/devel/lib/robot/arm.pdb"
-  "/root/summer2019/devel/lib/robot/arm"
+  "/home/junpei/summer2019/devel/lib/robot/arm.pdb"
+  "/home/junpei/summer2019/devel/lib/robot/arm"
 )
 
 # Per-language clean rules from dependency scanning.
