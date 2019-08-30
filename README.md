@@ -1,4 +1,4 @@
-# summer2019
+# 2019夏ロボのさつまいも自動機のrosワークスペース
 
 roslaunch auto main.launchのコマンドで起動する  
   
